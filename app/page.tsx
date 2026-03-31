@@ -179,13 +179,13 @@ export default function Home() {
 
       {/* LIVE */}
       <a
-        href="https://routebuddy.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block text-sm bg-gradient-to-r from-green-400 to-emerald-400 text-white px-5 py-2 rounded-full hover:scale-105 hover:shadow-md transition"
-      >
-        Explore 🌿
-      </a>
+  href="https://routebuddy.vercel.app"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block text-sm bg-gradient-to-r from-green-400 to-emerald-400 text-white px-5 py-2 rounded-full hover:scale-105 hover:shadow-md transition"
+>
+  Explore 🌿
+</a>
 
       {/* GITHUB */}
       <a
