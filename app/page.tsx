@@ -44,7 +44,7 @@ export default function Home() {
           <div className="bg-pink-100 rounded-full p-5">
             <img
               src="/avatar.png"
-              className="w-70 h-70 rounded-full object-cover"
+              className="w-64 h-64 rounded-full object-cover"
             />
           </div>
         </div>
