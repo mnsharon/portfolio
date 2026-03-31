@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* 🌸 Soft aesthetic theme */
+:root {
+  --background: #fff0f5;
+  --foreground: #171717;
+}
+
+/* REMOVE dark mode for now */
+
+body {
+  background: #fff0f5;
+  color: #171717;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* ✨ floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* scroll animation (for skills) */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
