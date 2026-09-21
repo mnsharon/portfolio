@@ -1,39 +1,17 @@
 @import "tailwindcss";
 
-/* 🌸 Soft aesthetic theme */
-:root {
-  --background: #fff0f5;
-  --foreground: #171717;
-}
+:root { --background:#0b0d12; --foreground:#f5f3ed; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--background); color:var(--foreground); font-family:var(--font-sans),sans-serif; overflow-x:hidden; }
+::selection { background:#b9ff66; color:#0b0d12; }
 
-/* REMOVE dark mode for now */
-
-body {
-  background: #fff0f5;
-  color: #171717;
-  font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
-}
-
-/* ✨ floating animation */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
-}
-
-/* scroll animation (for skills) */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-scroll {
-  display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
-}
+.hero-glow { position:absolute; width:48rem; height:48rem; right:-15rem; top:5rem; border-radius:999px; background:radial-gradient(circle,rgba(185,255,102,.13),transparent 65%); pointer-events:none; }
+.portrait-frame { position:relative; height:600px; overflow:hidden; border:1px solid rgba(255,255,255,.12); border-radius:2.5rem; background:linear-gradient(145deg,#1c2029,#11141b); box-shadow:0 35px 90px rgba(0,0,0,.35); }
+.social-link { display:grid; height:44px; width:44px; place-items:center; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:rgba(255,255,255,.65); transition:.25s ease; }
+.social-link:hover { border-color:#b9ff66; color:#b9ff66; transform:translateY(-2px); }
+.eyebrow { font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:#b9ff66; }
+.section-title { font-size:clamp(2.7rem,5vw,5.3rem); line-height:.95; letter-spacing:-.055em; font-weight:600; }
+.card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.025); border-radius:1.5rem; transition:.3s ease; }
+.card:hover { transform:translateY(-5px); border-color:rgba(185,255,102,.35); background:rgba(255,255,255,.04); }
+@media(max-width:1023px){ .portrait-frame{height:500px;} }
+@media(max-width:640px){ .portrait-frame{height:430px;border-radius:2rem;} }
