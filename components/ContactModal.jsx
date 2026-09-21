@@ -1,80 +1,18 @@
 "use client";
-
 import { motion } from "framer-motion";
 
-export default function ContactModal({ isOpen, onClose }) {
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-
-      {/* BACKDROP */}
-      <div
-        className="absolute inset-0 bg-black/30 backdrop-blur-sm"
-        onClick={onClose}
-      />
-
-      {/* MODAL */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        className="relative bg-white/90 backdrop-blur-xl p-8 rounded-3xl shadow-2xl w-[90%] max-w-md overflow-hidden"
-      >
-
-        {/* 🌸 Cute Background Blobs */}
-        <div className="absolute -top-12 -left-12 w-40 h-40 bg-pink-200 rounded-full blur-3xl opacity-40"></div>
-        <div className="absolute -bottom-12 -right-12 w-40 h-40 bg-rose-200 rounded-full blur-3xl opacity-40"></div>
-
-        {/* 💖 Title */}
-        <h2 className="text-2xl font-semibold text-gray-800 text-center mb-3">
-          Let’s Connect 💖
-        </h2>
-
-        {/* ✨ Cute Message */}
-        <p className="text-center text-gray-600 text-sm mb-6 leading-6">
-          Let’s turn ideas into something beautiful ✨ <br />
-          Whether it’s a virtual chat or a cozy coffee ☕💖
-        </p>
-
-        {/* FORM */}
-        <form className="flex flex-col gap-4">
-
-          <input
-            type="text"
-            placeholder="Your Name 🌸"
-            className="p-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300"
-          />
-
-          <input
-            type="email"
-            placeholder="Your Email 💌"
-            className="p-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300"
-          />
-
-          <textarea
-            placeholder="Your Message ✨"
-            rows="4"
-            className="p-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300"
-          />
-
-          <button
-            type="submit"
-            className="mt-4 bg-gradient-to-r from-pink-400 to-rose-400 text-white py-3 rounded-full shadow hover:scale-105 transition"
-          >
-            Send Message 💖
-          </button>
-
-        </form>
-
-        {/* CLOSE BUTTON */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-lg"
-        >
-          ✕
-        </button>
-
-      </motion.div>
-    </div>
-  );
+export default function ContactModal({isOpen,onClose}) {
+ if(!isOpen) return null;
+ return <div className="fixed inset-0 z-50 flex items-center justify-center p-4"><button aria-label="Close modal" className="absolute inset-0 bg-black/70 backdrop-blur-md" onClick={onClose}/>
+ <motion.div initial={{opacity:0,y:20,scale:.97}} animate={{opacity:1,y:0,scale:1}} className="relative w-full max-w-lg rounded-[2rem] border border-white/10 bg-[#12151c] p-7 shadow-2xl md:p-9">
+  <button onClick={onClose} className="absolute right-6 top-5 text-xl text-white/35 hover:text-white">×</button>
+  <p className="eyebrow">Contact</p><h2 className="mt-3 text-4xl font-semibold tracking-[-.04em]">Let&apos;s make something great.</h2>
+  <p className="mt-4 text-sm leading-6 text-white/45">Have an opportunity, collaboration, or idea? Send a note and let&apos;s start a conversation.</p>
+  <form className="mt-8 flex flex-col gap-3" onSubmit={(e)=>e.preventDefault()}>
+   <input required type="text" placeholder="Your name" className="rounded-xl border border-white/10 bg-white/[.03] p-4 text-sm outline-none placeholder:text-white/25 focus:border-[#b9ff66]/60"/>
+   <input required type="email" placeholder="Email address" className="rounded-xl border border-white/10 bg-white/[.03] p-4 text-sm outline-none placeholder:text-white/25 focus:border-[#b9ff66]/60"/>
+   <textarea required rows={5} placeholder="Tell me about your idea..." className="rounded-xl border border-white/10 bg-white/[.03] p-4 text-sm outline-none placeholder:text-white/25 focus:border-[#b9ff66]/60"/>
+   <button type="submit" className="mt-2 rounded-full bg-[#b9ff66] py-4 font-medium text-[#0b0d12]">Send message</button>
+  </form>
+ </motion.div></div>
 }
